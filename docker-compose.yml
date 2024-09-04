@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./csirt_project  # Adjust this path if your Django project folder is named differently
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./csirt_project:/app  # Bind the current directory to /app in the container
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./csirt-frontend  # Adjust this path if your Vue.js project folder is named differently
+    volumes:
+      - ./csirt-frontend:/app  # Bind the current directory to /app in the container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - api
