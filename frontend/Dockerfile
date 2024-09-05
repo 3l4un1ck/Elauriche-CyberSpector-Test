@@ -5,7 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --legacy-peer-deps && npm install --save-dev @vue/cli-service
+RUN npm install --legacy-peer-deps && npm install --save-dev @vue/cli-service --legacy-peer-deps
 
 COPY . .
 
