@@ -13,6 +13,7 @@ export const updateCSIRT = async (csirt) => {
 };
 
 export const addCSIRT = async (csirt) => {
+    console.log(csirt);
     const response = await axios.post(`${API_URL}/csirts/`, csirt);
     return response.data;
 };
