@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const API_URL = 'https://cyberspector-api.nickfal.com/api';
+const API_URL = 'http://localhost:8000/api';
 
 export const fetchCSIRTs = async () => {
-    const response = await axios.get(`${API_URL}/csirts`);
+    const response = await axios.get(`${API_URL}/csirts/`);
     return response.data.data;
 };
 
